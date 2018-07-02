@@ -22,12 +22,12 @@ int main() {
 	system("pause");
 
 	do {
-		cout << "---------------------------\n";
+		cout << "----------------------------------------------\n";
 		cout << "Welcome to the Hundi slots!\n" << "What would you like to do? \n";
 		cout << "Press (1) to Bet Hundi's\n";
-		cout << "Preass (2) Cash out\n";
+		cout << "Press (2) Cash out\n";
 		cout << "Press (3) to display the amount of your chips\n";
-		cout << "---------------------------\n";
+		cout << "----------------------------------------------\n";
 		cin >> userChoice;
 
 		switch (userChoice) {
@@ -80,22 +80,22 @@ int slotResults(int slot1, int slot2, int slot3, int chips, int bets) {
 
 	// hits 3 high combinations
 	if (slot1 == 6 && slot2 == 6 && slot3 == 6) {
-		cout << "You have won 20 times your bet! $ " << bets * 20 << "\n";
+		cout << "You have won 20 times your bet! $" << bets * 20 << "\n";
 		chips = chips + (bets * 20);
 
 	}
 	// hits 3 low combinations
 	if (slot1 == slot2 == slot3 && !(slot1 == 6 && slot2 == 6 && slot3 == 6)) {
-		cout << "You have won 10 times your best! $ " << bets * 10 << "\n";
+		cout << "You have won 10 times your best! $" << bets * 10 << "\n";
 		chips = chips + (bets * 10);
 	}
 	// hits 2 combinations
 	if (slot1 == slot2 || slot1 == slot3 || slot2 == slot3 && !(slot1 == slot2 == slot3) && !(slot1 == 6 && slot2 == 6 && slot3 == 6)) {
-		cout << "You have won 5 times your bet! $ " << bets * 5 << "\n";
+		cout << "You have won 5 times your bet! $" << bets * 5 << "\n";
 		chips = chips + (bets * 5);
 	}
 	else {
-		cout << "You didn't hit! $- " << bets << "\n";
+		cout << "You didn't hit! -$" << bets << "\n";
 		chips = chips - bets;
 	}
 	return chips;
